@@ -50,7 +50,14 @@
    display: grid;
    grid-template-columns: auto auto auto;
    gap: 2em;
+   justify-content: center;
 }
+
+.my-tasks:only-child {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
 
 .task {
     margin-top: 2em;

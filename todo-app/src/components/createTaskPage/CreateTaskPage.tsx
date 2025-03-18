@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState, ChangeEvent } from "react";
+import { SyntheticEvent, useState, ChangeEvent } from "react";
 import "./CreateTaskPage.css";
 import { useDispatch} from "react-redux";
 import { addTodoTask } from "../../store/todoTask";
@@ -12,7 +12,7 @@ export default function CreateTaskPage() {
   const [formData, setFormData] = useState({
     taskName: "",
     description: "",
-    status:'Awating Completion'
+    status:'awaiting'
   });
 
   function changeHandler(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
