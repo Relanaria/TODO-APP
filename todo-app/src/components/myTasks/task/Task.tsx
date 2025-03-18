@@ -25,8 +25,8 @@ export default function Task({ todoTask }: TaskProps) {
         {todoTask.description}
       </p>
       <p>
-        status:
-        {todoTask.status === "completed" ? "Completed" : "Awaiting completion"}
+        status: 
+        {todoTask.status === "completed" ? " Completed" : " Awaiting completion"}
       </p>
       <div className="task-menu">
         {todoTask.status === "completed" ? (

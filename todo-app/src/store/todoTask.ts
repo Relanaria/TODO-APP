@@ -8,9 +8,11 @@ interface todoTask {
   status: string,
 }
 
+const initialState: todoTask[] = [];
+
 const todosSlice = createSlice({
-  name: "todoTasks",
-  initialState: [] as todoTask[],
+  name: "todoTask",
+  initialState: initialState,
   reducers: {
     addTodoTask:  (state, action: PayloadAction<Omit<todoTask, "id">>) => {
       state.push({
@@ -27,17 +29,8 @@ const todosSlice = createSlice({
     removeCompletedTask: (state, action: PayloadAction<string>) => {
       return state.filter((task) => task.id !== action.payload);
     },
-    filterTasks: (state, action: PayloadAction<string>) =>{
-      if(action.payload === 'completed'){
-        return state.filter((task) => task.status === 'completed');
-      }
-      if(action.payload === 'awaiting'){
-        return state.filter((task) => task.status === 'awaiting');
-      }
-      return state;
-    }
   },
 });
 
-export const { addTodoTask, markAsCompleted, removeCompletedTask, filterTasks } = todosSlice.actions;
+export const { addTodoTask, markAsCompleted, removeCompletedTask } = todosSlice.actions;
 export default todosSlice.reducer;

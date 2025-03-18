@@ -2,18 +2,25 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import "./MyTasks.css";
 import Task from "./task/Task";
-import { useDispatch } from "react-redux";
-import { SyntheticEvent } from "react";
-import { filterTasks } from "../../store/todoTask";
+import { SyntheticEvent, useEffect } from "react";
+import { useState } from "react";
 
 export default function MyTasks() {
   const tasks = useSelector((state: RootState) => state.todoTask);
-  const dispatch = useDispatch();
+  const [filteredTasks, setFilteredTasks] = useState(tasks);
+  const [filterOption, setFilterOption] = useState('all');
+
+  useEffect(() =>{
+    if(filterOption === 'all') {
+      setFilteredTasks(tasks);
+    } else {
+      setFilteredTasks(tasks.filter((task) => task.status === filterOption));
+    } 
+  },[tasks, filterOption]);
 
   function handleClick(e: SyntheticEvent) {
     const target = e.target as HTMLButtonElement;
-    const result = dispatch(filterTasks(target.name));
-    console.log(result);
+    setFilterOption(target.name);
   }
 
   return (
@@ -25,8 +32,8 @@ export default function MyTasks() {
       </div>
 
       <article className="my-tasks">
-        {tasks.length !== 0 ? (
-          tasks.map((task) => <Task key={task.id} todoTask={task} />)
+        {filteredTasks.length !== 0 ? (
+          filteredTasks.map((task) => <Task key={task.id} todoTask={task} />)
         ) : (
           <p>There are no tasks in your dashboard.</p>
         )}
