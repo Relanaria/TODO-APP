@@ -1,45 +1,25 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { useSelector, useDispatch } from "react-redux";
-
-import { RootState } from "./store/store";
-import { increment, decrement } from "./store/counterSlice";
-
-import './App.css'
+import "./App.css";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Header from "./components/header/Header";
+import MyTasks from "./components/myTasks/MyTasks";
+import Home from "./components/home/Home";
+import CreateTaskPage from "./components/createTaskPage/CreateTaskPage";
 
 function App() {
-  const count = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useDispatch();
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => dispatch(increment())}>
-           Increase count
-        </button>
-        <button onClick={() => dispatch(decrement())}>
-           Decrease count
-        </button>
+      <Header /> 
+      
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/myTasks" element={<MyTasks/>} />
+        <Route path="/CreateTask" element={<CreateTaskPage/>} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
 
-        <p>Counte: {count}</p>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+  
     </>
-  )
+  );
 }
 
-export default App
+export default App;

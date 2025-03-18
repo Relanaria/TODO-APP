@@ -1,0 +1,18 @@
+p {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.get-started-btn{
+    font-size: 2rem;
+    font-weight: 500;
+    border: 2px solid #2B2D42;
+    padding: 1rem;
+    border-radius: 1.75rem;
+}
+
+.get-started-btn:hover{
+    text-decoration: none;
+    color: white;
+    background-color: #1c1f44;
+}

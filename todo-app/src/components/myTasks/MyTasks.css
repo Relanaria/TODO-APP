@@ -1,0 +1,72 @@
+.filter-tasks{
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filter-tasks button {
+    font-size: 2rem;
+    font-weight: 500;
+    border: 2px solid #2B2D42;
+    padding: 1rem;
+    border-radius: 1.75rem;
+    background: rgba(0,0,0,0.5);
+}
+
+.filter-tasks button:hover{
+    cursor: pointer;
+    background: rgba(80, 79, 79, 0.5);
+}
+
+.task-menu{
+    display: flex;
+    justify-content: space-around;
+}
+
+.check-btn{
+    background: rgb(10, 174, 10);
+    border: none;
+    border-radius: 5px;
+}
+
+.check-btn:hover{
+    cursor: pointer;
+    background: rgb(10, 136, 10);
+}
+
+.delete-btn{
+    background: rgb(191, 12, 12);
+    border: none;
+    border-radius: 5px;
+}
+
+.delete-btn:hover{
+    cursor: pointer;
+    background: rgb(135, 9, 9);
+}
+
+.my-tasks{
+   display: grid;
+   grid-template-columns: auto auto auto;
+   gap: 2em;
+}
+
+.task {
+    margin-top: 2em;
+    padding: 1em;
+    border: 4px solid #2B2D42;
+    border-radius: 1.5em;
+}
+
+.task-name{
+    font-size: 2rem;
+}
+
+.task-info{
+    font-size: 1.4rem;
+}
+
+.task-completed{
+    border-color: rgb(10, 220, 10);
+}

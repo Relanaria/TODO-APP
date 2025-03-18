@@ -1,0 +1,40 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    align-items: stretch;
+    font-size: 1.85rem;
+    gap: 1.5em;
+    flex-grow: 1;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    color: #2B2D42;
+    font-weight: 500;
+}
+
+
+.input-task{
+    color: black;
+    background: white;
+    border: 2px solid #2B2D42;
+    border-radius: 1rem;
+    padding: 1em;
+}
+
+.create-task{
+    font-size: 2rem;
+    font-weight: 500;
+    border: 2px solid #2B2D42;
+    padding: 1rem;
+    border-radius: 1.75rem;
+    background: rgba(0,0,0,0.5);
+}
+
+.create-task:hover{
+    cursor: pointer;
+    background: rgba(80, 79, 79, 0.5);
+}
