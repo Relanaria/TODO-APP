@@ -16,7 +16,9 @@ export const store = configureStore({
   reducer: {
     todoTask: todosReducer, 
   },
-  preloadedState
+    preloadedState: {
+    todoTask: preloadedState.todoTask
+  }
 });
 
 export type RootState = ReturnType<typeof store.getState>;
