@@ -7,7 +7,7 @@ const loadStateFromLocalStorage = () => {
     if (serializedState) {
       return JSON.parse(serializedState);
     }
-    return undefined;
+    return [];
 };
 
 const preloadedState = loadStateFromLocalStorage();
