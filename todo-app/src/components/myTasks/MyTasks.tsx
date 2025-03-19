@@ -20,7 +20,12 @@ export default function MyTasks() {
 
   function handleClick(e: SyntheticEvent) {
     const target = e.target as HTMLButtonElement;
-    setFilterOption(target.name);
+    if(target instanceof HTMLButtonElement){
+      setFilterOption(target.name);
+    }else{
+      return;
+    }
+    
   }
 
   return (
